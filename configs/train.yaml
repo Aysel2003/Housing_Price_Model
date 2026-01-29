@@ -17,10 +17,10 @@ model:
 grid:
   enabled: true
   cv: 3
-  scoring: neg_meean_squared_error
+  scoring: neg_mean_squared_error
   param_grid:
     randomforestregressor__n_estimators: [100, 150, 300]
-    randomforestregressor__max_depth: [100, 20, None]
+    randomforestregressor__max_depth: [100, 20, null]
 
 
 output:
