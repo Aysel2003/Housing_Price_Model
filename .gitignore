@@ -208,3 +208,6 @@ __marimo__/
 
 # Virtual environment
 my_prod_env/
+
+artifacts/models/
+*.joblib
