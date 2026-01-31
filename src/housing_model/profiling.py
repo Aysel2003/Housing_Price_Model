@@ -1,13 +1,13 @@
 from typing import Any, Dict
 import pandas as pd
 
-from .schema import REQUIRED_NUMERIC, REQUIRED_CATEGORICAL
+from .schema import REQURIED_NUMERIC, REQURIED_CATEGORICAL
 
 
 def build_training_profile(df: pd.DataFrame) -> Dict[str, Any]:
     profile: Dict[str, Any] = {"numeric": {}, "categorical": {}}
 
-    for col in REQUIRED_NUMERIC:
+    for col in REQURIED_NUMERIC:
         s = df[col]
         profile["numeric"][col] = {
             "count": int(s.notna().sum()),
@@ -18,7 +18,7 @@ def build_training_profile(df: pd.DataFrame) -> Dict[str, Any]:
             "q99": float(s.quantile(0.99)),
         }
 
-    for col in REQUIRED_CATEGORICAL:
+    for col in REQURIED_CATEGORICAL:
         freq = df[col].fillna("<<MISSING>>").value_counts(normalize=True)
         profile["categorical"][col] = {k: float(v) for k, v in freq.to_dict().items()}
     return profile
