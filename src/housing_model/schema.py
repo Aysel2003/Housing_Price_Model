@@ -1,7 +1,7 @@
 ## data drift(quantile ile, kod ve ya evidently ai ile yoxlamaq olar) concept drift
 
 from dataclasses import dataclass
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Tuple
 import pandas as pd
 
 REQURIED_NUMERIC = [
