@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY pyproject.toml /app/
 COPY src /app/src
 COPY configs /app/configs
-COPY artifacts /app/artifacts
+#COPY artifacts /app/artifacts
 
  # Install
 RUN pip install --no-cache-dir -U pip \
