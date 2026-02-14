@@ -143,6 +143,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+my_prod_env/
 
 # Spyder project settings
 .spyderproject
@@ -201,13 +202,17 @@ cython_debug/
 .cursorignore
 .cursorindexingignore
 
+
 # Marimo
 marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-# Virtual environment
-my_prod_env/
 
-artifacts/models/
+# ML artifacts
+artifacts/
+data/
 *.joblib
+*.pkl
+*.pt
+*.onnx
