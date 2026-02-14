@@ -18,6 +18,8 @@ COPY configs /app/configs
 RUN pip install --no-cache-dir -U pip \
  && pip install --no-cache-dir -e .
 
+RUN python -m housing_model.train
+
 ENV LOG_FORMAT=json
 ENV LOG_LEVEL=INFO
 ENV PYTHONUNBUFFERED=1
@@ -25,4 +27,6 @@ ENV PYTHONUNBUFFERED=1
 EXPOSE 8000
 
 CMD ["uvicorn", "housing_model.service:app", "--host", "0.0.0.0", "--port", "8000"]
+
+
 
