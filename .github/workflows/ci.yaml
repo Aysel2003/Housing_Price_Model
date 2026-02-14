@@ -34,6 +34,9 @@ jobs:
         run: |
           pytest -q
 
+      - name: Train model
+        run: |
+          python -m housing_model.train
 
       - name: Build Docker image
         run: |
@@ -107,7 +110,7 @@ jobs:
           echo "HTTP=$code"
 
           # If you uncommented training above, change this to: test "$code" = "200"
-          test "$code" = "503"
+          test "$code" = "200"
 
       - name: Show container logs (debug)
         if: failure()
